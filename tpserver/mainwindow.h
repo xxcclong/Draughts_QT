@@ -8,7 +8,7 @@
 #include <QString>
 #include <qtxml/QDomDocument>
 #include <QSignalMapper>
-
+#include <string>
 namespace Ui {
 class MainWindow;
 }
@@ -26,15 +26,18 @@ public:
 public slots:
     void acceptConnection();
     void recvMessage(int);
+    void disconnecteed(int);
 
 private slots:
     void on_sendButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    int status[8];
+    int pair[8];
     QTcpServer  *listenSocket;
-    QTcpSocket  *readWriteSocket[4];
-    int clientnum = 0;
+    QTcpSocket  *readWriteSocket[8];
+    int clientnum ;
 };
 
 #endif // MAINWINDOW_H

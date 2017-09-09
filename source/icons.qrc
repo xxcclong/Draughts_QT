@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/whitelabel.png</file>
+        <file>icons/blacklabel.png</file>
+        <file>icons/10bf64872ad6acc0fdd7b51ee2f40edb-2.png</file>
+    </qresource>
+</RCC>
