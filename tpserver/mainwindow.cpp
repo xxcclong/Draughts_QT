@@ -113,10 +113,14 @@ void MainWindow::recvMessage(int i)
 
 void MainWindow::on_sendButton_clicked()
 {
-    /*QByteArray *array =new QByteArray;
+    QByteArray *array =new QByteArray;
     array->clear();
     array->append(ui->inputEdit->toPlainText());
-    this->readWriteSocket->write(array->data());
-    ui->infoEdit->append("Server: "+ui->inputEdit->toPlainText());
-//    ui->inputEdit->clear();*/
+    for(int i=0;i<=7;++i)
+    {
+        if(status[i] == 2)
+            this->readWriteSocket[i]->write(array->data());
+        ui->infoEdit->append(QString::number(i)+"   ");
+    }
+    ui->inputEdit->clear();
 }
